@@ -81,11 +81,11 @@ def parseCaseStep(case_step_txt):
     def parseStep(index, step_txt):
         step = {}
         step["instruction"] = step_txt[0].strip()
-        step["expected"] = step_txt[1].strip()
+        step["expected"] = step_txt[3].strip()
         step["number"] = index
         return step
 
-    regex = re.compile(ur'WHEN(.*?)\nTHEN([^\n]*)', re.IGNORECASE | re.DOTALL)
+    regex = re.compile(ur'WHEN((.(?!WHEN|THEN))*.)((?:THEN)((.(?!WHEN))*.)|)', re.IGNORECASE | re.DOTALL)
     steps = re.findall(regex, case_step_txt)
 
     case_step = []
