@@ -1,0 +1,14 @@
+WHEN  This is an one-line W/T instruction THEN  Handle successfully
+
+WHEN  This is a two-line W/T instruction
+THEN  Handle successfully
+
+WHEN  This 
+is 
+a 
+multiple-
+line
+W/T
+instruction
+THEN Handle
+successfully

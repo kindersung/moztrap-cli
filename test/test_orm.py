@@ -53,5 +53,20 @@ class TestOrmSuite(unittest.TestCase):
         self.assertEqual(orm.parseSuite(in_txt)['objects'], suite_out['objects'])
         #self.assertEqual(orm.parseSuite(self.txt)['description'], suite_out['description'])
         self.assertEqual(orm.parseSuite(in_txt), suite_out)
+
+class TestOrmCaseStep(unittest.TestCase):
+    def setUp(self):
+        with open('case_step.txt', 'r') as f:
+            self.txt = ''.join(f.readlines())
+        with open('case_step.out.json') as f:
+            self.json_out = ''.join(f.readlines())
+
+    def test_parseCaseStep(self):
+        in_txt = self.txt
+        case_step_out = json.loads(self.json_out)
+        self.assertEqual(len(orm.parseCaseStep(in_txt)), len(case_step_out))
+        self.assertEqual(orm.parseCaseStep(in_txt)[0], case_step_out[0])
+        self.assertEqual(orm.parseCaseStep(in_txt), case_step_out)
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,17 @@
+[
+    {
+        "expected": "Handle successfully",
+            "instruction": "This is an one-line W/T instruction",
+            "number": 1
+    },
+    {
+        "expected": "Handle successfully",
+        "instruction": "This is a two-line W/T instruction",
+        "number": 2
+    },
+    {
+        "expected": "Handle\nsuccessfully",
+        "instruction": "This \nis \na \nmultiple-\nline\nW/T\ninstruction",
+        "number": 3
+    }
+]
